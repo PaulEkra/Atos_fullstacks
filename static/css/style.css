@@ -326,6 +326,12 @@ th {
     width: 40vh;
     padding-bottom: 10vh;
 }
-.active{
+.active a{
     color: blue;
 }
+.text-active a {
+    color: blue;
+    font-weight: bold;
+}
+
+

@@ -1,60 +1,50 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Etab - Modifier un Élève</title>
-    <link rel="stylesheet" href={% static "css/style.css" %}>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-</head>
-<body>
-<div class="dashboard">
-    {% include 'menu.html' %}
-    <main>
-                <a href="{% url 'student:index' %}" class="return"><i class="fas fa-arrow-left"></i>Retour</a>
+{% block title %}    <title>Mon Etab - Modifier un Élève</title> {% endblock %}
 
-        <h2>Modifier l'élève - 245</h2>
-        <form>
+{% block content %}
+    <div class="dashboard">
+        {% include 'menu.html' %}
+        <main>
+            <a href="{% url 'student:index' %}" class="return"><i class="fas fa-arrow-left"></i>Retour</a>
+
+            <h2>Modifier l'élève - 245</h2>
             <form>
-                <div>
-                    <input type="text" placeholder="Nom" value="Kouakou">
-                    <select>
-                        <option> Selectionnez une classe</option>
-                        <option>Tle</option>
-                        <option>1ère</option>
-                        <option selected>2nde</option>
-                        <option>3ème</option>
-                        <option>4ème</option>
-                        <option>5ème</option>
-                        <option>6ème</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="text" placeholder="Prénoms" value="George">
-                    <input type="number" placeholder="Téléphone" value="0123456789">
-                </div>
-                <div>
-                    <label><input type="radio" checked name="genre" value="Homme"> Homme</label>
-                    <label><input type="radio" name="genre" value="Femme"> Femme</label>
-                </div>
-                <div>
-                    <input type="text" placeholder="Matricule" value="GDJG83737">
-                    <input type="text" placeholder="Ville" value="Dabou">
-                </div>
-                <div style="grid-column: span 1">
-                    <input type="date" placeholder="Date de naissance" value="1992-08-12">
-                </div>
-                <div>
-                    <button type="button" >Annuler</button>
-                    <button type="submit">Enregistrer</button>
-                </div>
-            </form>
-    </main>
-</div>
-</body>
-</html>
+                <form>
+                    <div>
+                        <input type="text" placeholder="Nom" value="Kouakou">
+                        <select>
+                            <option> Selectionnez une classe</option>
+                            <option>Tle</option>
+                            <option>1ère</option>
+                            <option selected>2nde</option>
+                            <option>3ème</option>
+                            <option>4ème</option>
+                            <option>5ème</option>
+                            <option>6ème</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Prénoms" value="George">
+                        <input type="number" placeholder="Téléphone" value="0123456789">
+                    </div>
+                    <div>
+                        <label><input type="radio" checked name="genre" value="Homme"> Homme</label>
+                        <label><input type="radio" name="genre" value="Femme"> Femme</label>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Matricule" value="GDJG83737">
+                        <input type="text" placeholder="Ville" value="Dabou">
+                    </div>
+                    <div style="grid-column: span 1">
+                        <input type="date" placeholder="Date de naissance" value="1992-08-12">
+                    </div>
+                    <div>
+                        <button type="button" >Annuler</button>
+                        <button type="submit">Enregistrer</button>
+                    </div>
+                </form>
+        </main>
+    </div>
+{% endblock %}
