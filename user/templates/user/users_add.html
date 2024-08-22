@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Etab - Ajouter Utilisateur</title>
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+</head>
+<body>
+<div class="dashboard">
+    {% include 'menu.html' %}
+
+    <main >
+        <a href="{% url 'user:index' %}" class="return"><i class="fas fa-arrow-left"></i>Retour</a>
+
+        <h2 style="text-align: center;">Ajouter utilisateur</h2>
+        <form>
+
+            <div>
+                <input type="text" placeholder="Pseudo">
+            </div>
+            <div >
+                <input type="password" placeholder="Mot de passe">
+            </div>
+            <div >
+                <input type="password" placeholder="Confirmer mot de passe">
+            </div>
+            <div>
+
+                <button type="button">Annuler</button>
+                <button type="submit">Enregistrer</button>
+            </div>
+        </form>
+    </main>
+</div>
+</body>
+</html>

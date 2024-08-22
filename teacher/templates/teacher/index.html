@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Etab - Professeurs</title>
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+<div class="dashboard">
+    {% include 'menu.html' %}
+
+    <main>
+        <h2>Professeurs (2)</h2>
+        <a href={% url 'teacher:add' %} style=" text-decoration: none; color: black;position: absolute; top: 5rem; right: 3rem;">
+        <i class="fa-solid fa-circle-plus"></i>Nouveau professeur
+        </a>
+        <table id="table">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Matière</th>
+                <th>Vacant</th>
+                <th>Âge</th>
+                <th>Téléphone</th>
+                <th>Ville</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>KOUAKOU</td>
+                <td>Gregoire</td>
+                <td>Math</td>
+                <td>Non</td>
+                <td>40</td>
+                <td>0123456789</td>
+                <td>Touba</td>
+                <td><button type="button" style="background-color: orangered; color: black;">Modifier</button> <button class="deleteButton" style="background-color: red; color: black;">Supprimer</button></td>
+            </tr>
+            <tr>
+                <td>ATTA</td>
+                <td>Flora</td>
+                <td>Physique</td>
+                <td>Oui</td>
+                <td>37</td>
+                <td>0123456789</td>
+                <td>Bouké</td>
+                <td><button type="button" style="background-color: orangered; color: black;">Modifier</button> <button class="deleteButton" style="background-color: red; color: black;">Supprimer</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+</body>
+</html>
+<div class="alert">
+    <p>ATTENTION !!</p>
+    <p>Voulez-vous vraiment supprimer cet professeur?</p>
+    <button id="confirmDelete">Oui</button>
+    <button id="cancelDelete">Non</button>
+</div>
+<script src={% static "js/modal.js" %}></script>
+<script src={% static "js/dataTable.js" %}></script>

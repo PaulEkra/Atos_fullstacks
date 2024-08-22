@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Etab - Tableau de Bord</title>
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+<div class="dashboard">
+    {% include 'menu.html' %}
+    <main>
+        <h2>Tableau de bord</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Nombre d'élève</h3>
+                <p style="font-size: 50px;">128 100</p>
+            </div>
+            <div class="card">
+                <h3>Nombre de professeur</h3>
+                <p style="font-size: 50px;">128 100</p>
+            </div>
+            <div class="card">
+                <h3>Nombre d'utilisateur</h3>
+                <p style="font-size: 50px;">128 100</p>
+            </div>
+            <div class="card">
+                <h3>Élève par genre</h3>
+                <div class="chart">
+                    <div style="height: 200px;">
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
+
+<script src= {% static "js/graph.js" %}></script>

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Etab - Connexion</title>
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1><i class="fas fa-leaf"></i>Mon Etab</h1>
+            <input type="text" placeholder="Identifiant">
+            <input type="password" placeholder="Mot de passe">
+            <a href={% url 'dashboard:index' %}>
+                <button>Connexion</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
