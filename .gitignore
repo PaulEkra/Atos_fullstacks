@@ -1,1 +1,5 @@
-.env/
+student/migrations/*
+user/migrations/*
+teacher/migrations/*
+venv/
+.idea/

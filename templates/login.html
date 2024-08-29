@@ -10,15 +10,17 @@
 
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <h1><i class="fas fa-leaf"></i>Mon Etab</h1>
-            <input type="text" placeholder="Identifiant">
-            <input type="password" placeholder="Mot de passe">
-            <a href={% url 'dashboard:index' %}>
-                <button>Connexion</button>
-            </a>
-        </div>
+<div class="login-container">
+    <div class="login-box">
+        <h1><i class="fas fa-leaf"></i>Mon Etab</h1>
+        {{  form.username }}
+
+        {{  form.password }}
+
+        <a href={% url 'dashboard:index' %}>
+            <button>Connexion</button>
+        </a>
     </div>
+</div>
 </body>
 </html>

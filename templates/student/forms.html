@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Mon Etab - {% if form.instance.pk is  None %}Ajouter{% else %}Modifier{% endif %} un Élève</title> {% endblock %}
+{% block content %}
+
+    <main>
+        <a href="{% url 'student:index' %}" class="return"><i class="fas fa-arrow-left"></i>Retour</a>
+
+        <form method="post">
+            {% csrf_token %}
+            <h2>{% if form.instance.pk is not None %}Modifier un élève{% else %}Ajouter un élève{% endif %}</h2>
+            <div>
+                {{ form.last_name }}
+                {{ form.classroom }}
+            </div>
+            <div>
+                {{ form.first_name }}
+                {{ form.phone }}
+            </div>
+            <div>
+                {{ form.gender }}
+            </div>
+            <div>
+                {{ form.register }}
+                {{ form.city }}
+            </div>
+            <div style="grid-column: span 1">
+                {{ form.birth_date }}
+            </div>
+            <div>
+                {% if form.instance.pk is  None %}<button type="reset" style="background-color: red;" >Annuler</button>{% endif %}
+                <button type="submit">{% if form.instance.pk is  None %} Enregistrer{% else %} Enregistrer modification {% endif %}</button>
+            </div>
+
+        </form>
+    </main>
+{% endblock %}

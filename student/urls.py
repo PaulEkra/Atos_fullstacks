@@ -1,12 +1,12 @@
 from django.urls import path
-from .views import index, add, edit, delete
+from .views import index, add_and_edit, delete
 
 app_name = 'student'
 
 urlpatterns = [
     path('', index, name='index'),
-    path('add/', add, name='add'),
-    path('edit/<int:id>/', edit, name='edit'),
-    path('delete/<int:id>/', delete, name='delete'),
+    path('add/', add_and_edit, name='add'),
+    path('edit/<int:pk>/', add_and_edit, name='edit'),
+    path('delete/<int:pk>/', delete, name='delete'),
 
 ]

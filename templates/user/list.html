@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Mon Etab - Utilisateurs</title>
+{% endblock %}
+
+{% block content %}
+
+
+    <main>
+        <h2>Utilisateurs ({{ total_users}})</h2>
+        <a href="{% url 'user:add' %}" style=" text-decoration: none; color: black;position: absolute; top: 2rem; right: 3rem;">
+            <i class="fa-solid fa-circle-plus"></i>Nouveau utilisateur
+        </a>
+        {% if users %}
+            <table id="table">
+                <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Date de création</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.date_joined | date:"d/m/Y" }}</td>
+                        <td><a href="{% url 'user:edit' pk=user.id %}"><button type="button" style="background-color: orangered; color: black;">Modifier</button></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            0 utilisateur enregistré
+        {% endif %}
+    </main>
+{% endblock %}

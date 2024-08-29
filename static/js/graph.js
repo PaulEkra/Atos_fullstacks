@@ -1,11 +1,10 @@
-// Example for generating the pie chart in the "Élève par genre" box
 const ctx = document.getElementById('genderChart').getContext('2d');
 const genderChart = new Chart(ctx, {
     type: 'pie',
     data: {
         labels: ['Homme', 'Femme'],
         datasets: [{
-            data: [55, 45],
+            data: [window.totalStudentsMale, window.totalStudentsFemale],  // Access variables via window object
             backgroundColor: ['#36A2EB', '#FF6384'],
         }]
     },

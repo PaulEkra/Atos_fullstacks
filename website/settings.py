@@ -37,11 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'student',
-    'dashboard',
-    'teacher',
-    'user',
-    'report',
+
+    #Apps
+    'student.apps.StudentConfig',
+    'dashboard.apps.DashboardConfig',
+    'teacher.apps.TeacherConfig',
+    'user.apps.UserConfig',
+    'report.apps.ReportConfig',
+
+    #Libraries
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'mathfilters'
 ]
 
 MIDDLEWARE = [
@@ -67,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'base.utils.context_processors.count'
             ],
         },
     },
@@ -131,3 +139,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

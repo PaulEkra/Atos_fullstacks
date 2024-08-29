@@ -3,7 +3,7 @@
     {% url 'student:index'  as eleve_url %}
     {% url 'student:add'  as eleve_add_url %}
     {% url 'student:edit'  as eleve_edit_url %}
-
+    
     {% url 'teacher:index'  as professeur_url %}
     {% url 'teacher:add'  as professeur_add_url %}
     {% url 'teacher:edit'  as professeur_edit_url %}
@@ -14,7 +14,8 @@
     <h2><i class="fas fa-leaf"></i>Mon Etab</h2>
     <nav>
         <ul>
-            <li {% if request.path == dashboard_url %} class="active text-active" {% endif %}><i class="fas fa-grip-horizontal"></i><a href="{% url 'dashboard:index' %}"> Tableau de bord </a></li>
+            
+            <li {% if request.path == dashboard_url %} class="active text-active" {% endif %}><i class="fas fa-grip-horizontal"> </i><a href="{% url 'dashboard:index' %}"> Tableau de bord </a></li>
             <li {% if request.path == eleve_url  or request.path == eleve_edit_url or request.path == eleve_add_url %} class="active text-active" {% endif %}><i class="fi fi-rs-users-class"></i><a href={% url 'student:index' %}> Élèves</a></li>
             <li {% if request.path == professeur_url or request.path == professeur_add_url or request.path == professeur_edit_url %} class="active text-active" {% endif %}><i class="fas fa-chalkboard-teacher"></i><a href={% url 'teacher:index' %}> Professeurs</a></li>
             <li {% if request.path == utilisateur_url or request.path == utilisateur_edit_url %} class="active text-active" {% endif %}><i class="fa-regular fa-user"></i> <a href={% url 'user:index' %}> Utilisateurs</a></li>
