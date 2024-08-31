@@ -23,7 +23,8 @@
 
         </ul>
     </nav>
-    <a href={% url '' %}>
+    <h5 style="color: blue;">{{user.username|upper}}</h5>
+    <a href={% url 'logout' %}>
         <i class="fa-solid fa-arrow-right-from-bracket"></i>Déconnexion
     </a>
 </aside>

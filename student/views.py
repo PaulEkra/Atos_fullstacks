@@ -3,9 +3,13 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import StudentForm
 from .models import Student
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
+
+@login_required
 def index(request):
     students = Student.objects.all()
     today = datetime.now().year
@@ -17,6 +21,8 @@ def index(request):
     return render(request, "student/list.html", context)
 
 
+
+@login_required
 def add_and_edit(request, pk=None):
     if pk:
         student = get_object_or_404(Student, id=pk)

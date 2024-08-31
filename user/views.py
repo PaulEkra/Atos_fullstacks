@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import UserForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def index(request):
     users = User.objects.all()
     numbers_users = users.count()
@@ -15,6 +17,7 @@ def index(request):
     return render(request, "user/list.html", context)
 
 
+@login_required
 def add_and_edit(request, pk=None):
     if pk:
         user = get_object_or_404(User, id=pk)

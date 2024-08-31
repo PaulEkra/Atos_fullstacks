@@ -13,13 +13,20 @@
 <div class="login-container">
     <div class="login-box">
         <h1><i class="fas fa-leaf"></i>Mon Etab</h1>
-        {{  form.username }}
+        <form method="post">
+            {% csrf_token %}
+        <div>{{  form.username }}</div>
+    <div> {{  form.password }}</div>
+     {% if messages %}
+        {% for m in messages %}
+            <h3>{{m}}</h3>
+        {% endfor %}
+     {% endif %}
+        
 
-        {{  form.password }}
-
-        <a href={% url 'dashboard:index' %}>
-            <button>Connexion</button>
-        </a>
+        
+       <div><button type="submit">Connexion</button></div> 
+        </form>
     </div>
 </div>
 </body>
